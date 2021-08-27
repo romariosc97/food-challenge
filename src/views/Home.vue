@@ -1,21 +1,22 @@
 <template>
   <div class="home">
-      <img alt="Vue logo" src="../assets/logo.png">
-      <HelloWorld v-bind:msg="'Welcome to Your Vue.js App ' + message"/>
+      <h1>Vista de Hoy</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    
   },
   computed:{
     message(){ return this.$store.state.message; }
   }
 }
 </script>
+
+<style lang="sass">
+    .home
+      text-align: center
+</style>

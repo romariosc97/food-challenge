@@ -3,10 +3,10 @@
   <router-view/>
 </template>
 <script>
-import MobileNavbar from '@/components/MobileNavbar.vue';
-export default {
-  components: { MobileNavbar }
-}
+  import MobileNavbar from '@/components/navigation/MobileNavbar.vue';
+  export default {
+    components: { MobileNavbar }
+  }
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
