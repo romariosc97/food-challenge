@@ -20,6 +20,7 @@ export default {
     width: 50px
     height: 50px
     z-index: 2
+    box-shadow: 0px 7px 9px rgba(53, 178, 102, 0.25)
     svg
       color: #FFF
 </style>
