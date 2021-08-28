@@ -3,6 +3,7 @@ import Home from '../views/Home.vue';
 import Orders from '../views/Orders.vue';
 import Food from '../views/Food.vue';
 import Coach from '../views/Coach.vue';
+import Dishes from '../views/Dishes.vue';
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/orders',
     name: 'Orders',
     component: Orders
+  },
+  {
+    path: '/dishes',
+    name: 'Dishes',
+    component: Dishes
   },
   {
     path: '/food',

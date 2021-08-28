@@ -1,7 +1,10 @@
 import { createStore } from 'vuex';
 export default createStore({
     state:{
-        message: "Bandidox"
+        progressBar: {
+            value: "11000",
+            percent: "50"
+        }
     },
     getters:{
 
