@@ -4,6 +4,7 @@ import Orders from '../views/Orders.vue';
 import Food from '../views/Food.vue';
 import Coach from '../views/Coach.vue';
 import Dishes from '../views/Dishes.vue';
+import DishDetail from '../views/DishDetail.vue';
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: '/dishes',
     name: 'Dishes',
     component: Dishes
+  },
+  {
+    path: '/dish/:id',
+    name: 'Dish detail',
+    component: DishDetail
   },
   {
     path: '/food',

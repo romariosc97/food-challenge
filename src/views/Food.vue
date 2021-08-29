@@ -1,16 +1,18 @@
 <template>
   <MobileNavbar />
   <div class="food">
-    <h1>Vista de comida.</h1>
+    <UnderConstruction v-bind:route="'Comidas'"/>
   </div>
 </template>
 
 <script>
 import MobileNavbar from '@/components/navigation/MobileNavbar.vue';
+import UnderConstruction from '@/components/UnderConstruction.vue';
 export default {
   name: 'Food',
   components: {
-    MobileNavbar
+    MobileNavbar,
+    UnderConstruction
   },
   methods:{
     

@@ -1,16 +1,18 @@
 <template>
   <MobileNavbar />
   <div class="coach">
-    <h1>Vista de Coach.</h1>
+    <UnderConstruction v-bind:route="'Coaching'"/>
   </div>
 </template>
 
 <script>
 import MobileNavbar from '@/components/navigation/MobileNavbar.vue';
+import UnderConstruction from '@/components/UnderConstruction.vue';
 export default {
   name: 'Coach',
   components: {
-    MobileNavbar
+    MobileNavbar,
+    UnderConstruction
   },
   methods:{
     

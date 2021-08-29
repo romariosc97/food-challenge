@@ -1,6 +1,6 @@
 <template>
     <div class="dishes">
-        <TopBar />
+        <TopBar v-bind:route="'orders'"/>
         <div class="list">
             <Card v-for="data in dishes" v-bind:key="data.title" v-bind:data="data" />
         </div>

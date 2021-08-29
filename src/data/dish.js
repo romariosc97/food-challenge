@@ -1,36 +1,60 @@
 const dishJson = [
     {
+        id: 1,
         title: "Lo mein de pollo",
+        ingredients: "Delicioso plato de pasta con pollo, verduras salteadas y chía.",
         calories: 800,
-        img: "images/dishes/dish-1.png",
+        fat: 6,
+        carbohydrates: 108,
+        proteins: 42,
+        img: "/images/dishes/dish-1.png",
         tags: [
-            "images/tags/low-sodium.png",
-            "images/tags/low-sugar.png",
-            "images/tags/low-gluten.png",
-            "images/tags/low-lactose.png",
-            "images/tags/low-carbs.png",
-            "images/tags/low-fat.png"
+            {img: "/images/tags/low-sodium.png", name: "Bajo en sodio"},
+            {img: "/images/tags/low-sugar.png", name: "Bajo en azúcar"},
+            {img: "/images/tags/low-gluten.png", name: "Bajo en gluten"},
+            {img: "/images/tags/low-lactose.png", name: "Bajo en lactosa"},
+            {img: "/images/tags/low-carbs.png", name: "Bajo en carbohidratos"},
+            {img: "/images/tags/low-fat.png", name: "Bajo en grasa"}
+        ],
+        salads: [
+            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     },
     {
+        id: 2,
         title: "Alitas de pollo",
+        ingredients: "Delicioso plato con alitas de pollo y lechuga orgánica.",
         calories: 850,
-        img: "images/dishes/wings.jpg",
+        fat: 9,
+        carbohydrates: 40,
+        proteins: 115,
+        img: "/images/dishes/wings.jpg",
         tags: [
-            "images/tags/low-sodium.png",
-            "images/tags/low-sugar.png",
-            "images/tags/low-gluten.png"
+            {img: "/images/tags/low-sodium.png", name: "Bajo en sodio"},
+            {img: "/images/tags/low-sugar.png", name: "Bajo en azúcar"},
+            {img: "/images/tags/low-gluten.png", name: "Bajo en gluten"}
+        ],
+        salads: [
+            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     },
     {
+        id: 3,
         title: "Ensalada con pollo",
+        ingredients: "Delicioso plato con pollo, tomate y orégano.",
         calories: 700,
-        img: "images/dishes/chicken-salad.jpg",
+        fat: 7,
+        carbohydrates: 55,
+        proteins: 95,
+        img: "/images/dishes/chicken-salad.jpg",
         tags: [
-            "images/tags/low-sodium.png",
-            "images/tags/low-gluten.png",
-            "images/tags/low-carbs.png",
-            "images/tags/low-fat.png"
+            {img: "/images/tags/low-sodium.png", name: "Bajo en sodio"},
+            {img: "/images/tags/low-gluten.png", name: "Bajo en gluten"},
+            {img: "/images/tags/low-carbs.png", name: "Bajo en carbohidratos"},
+            {img: "/images/tags/low-fat.png", name: "Bajo en grasa"}
+        ],
+        salads: [
+            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     }
 ];
