@@ -17,7 +17,7 @@ const dishJson = [
             {img: "/images/tags/low-fat.png", name: "Bajo en grasa"}
         ],
         salads: [
-            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
+            {id: 99, img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     },
     {
@@ -35,7 +35,7 @@ const dishJson = [
             {img: "/images/tags/low-gluten.png", name: "Bajo en gluten"}
         ],
         salads: [
-            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
+            {id: 99, img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     },
     {
@@ -54,7 +54,7 @@ const dishJson = [
             {img: "/images/tags/low-fat.png", name: "Bajo en grasa"}
         ],
         salads: [
-            {img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
+            {id: 99, img: "/images/dishes/salad-cesar.jpg", name: "Ensalada Cesar", calories: 200}
         ]
     }
 ];

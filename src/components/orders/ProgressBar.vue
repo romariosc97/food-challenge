@@ -1,9 +1,9 @@
 <template>
     <div class="progress-bar">
-        <span class="min">{{value}} Kcal</span>
-        <span class="max">22000 Kcal</span>
+        <span class="min">{{progressBar.value}} Kcal</span>
+        <span class="max">{{progressBar.max}} Kcal</span>
         <div class="progress">
-            <div class="completed" v-bind:style="`width: ${percent}%`"></div>
+            <div class="completed" v-bind:style="`width: ${progressBar.percent}%`"></div>
         </div>
     </div>
 </template>
@@ -12,8 +12,7 @@
 export default {
     name: 'ProgressBar',
     computed:{
-        percent(){ return this.$store.state.progressBar.percent; },
-        value(){ return this.$store.state.progressBar.value; }
+        progressBar(){ return this.$store.state.progressBar; },
     }
 }
 </script>

@@ -9,12 +9,13 @@
                 <img src="@/assets/images/info.png" alt="Info">
             </div>
         </div>
-        <button class="add">Agregar</button>
+        <button v-on:click="addSalad" class="add">Agregar</button>
     </div>
 </template>
 
 <script>
 import Commend from '@/components/dishes/Commend.vue';
+import { calcProgressBar } from '@/helpers';
 export default {
     name: 'SaladCard',
     components: {
@@ -23,6 +24,20 @@ export default {
     props: {
         data: Object
     },
+    computed:{
+        order(){ return this.$store.state.order; },
+        progressBar(){ return this.$store.state.progressBar; },
+    },
+    methods: {
+        addSalad: function() {
+            this.$store.commit('updateDishes', [...this.order[this.order.currentDay.number][this.order.currentFood].dishes, this.data]);
+
+            let { value, percent } = calcProgressBar(this.progressBar, this.data.calories, '+');
+            this.$store.commit('updateProgressBar', {...this.progressBar, value: value, percent: percent});
+        }
+    },
+    created: function () {
+    }
 }
 </script>
 

@@ -18,9 +18,6 @@ export default {
   name: 'Orders',
   components: { MobileNavbar, TopBar, Calendar, Delivery, FoodSection },
   methods:{
-    updateMessage(){
-      this.$store.commit('updateMessage', 'El bandido ha caído.')
-    }
   }
 }
 </script>

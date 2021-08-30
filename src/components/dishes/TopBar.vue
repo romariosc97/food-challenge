@@ -5,8 +5,8 @@
         </router-link>
         <div class="title">{{route === 'orders' ? 'Almuerzo' : 'Detalle'}}</div>
         <div class="date" v-show="route === 'orders'">
-            <div class="day">Vie</div>
-            <div class="number">27</div>
+            <div class="day">{{currentDay.text}}</div>
+            <div class="number">{{currentDay.number}}</div>
         </div>
         <div class="like" v-show="route === 'dishes'">
             <img src="@/assets/images/like.png" alt="">
@@ -20,10 +20,8 @@ export default {
     props: {
         route: String
     },
-    components: {
-    },
-    methods:{
-    
+    computed: {
+        currentDay(){ return this.$store.state.order.currentDay; }
     }
 }
 </script>

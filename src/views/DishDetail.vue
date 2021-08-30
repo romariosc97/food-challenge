@@ -42,7 +42,7 @@
                 <CheckBox v-bind:label="'Incluir picante'"/>
             </div>
             <div class="action">
-                <button class="add-order">Agregar al pedido</button>
+                <button v-on:click="addDish" class="add-order">Agregar al pedido</button>
             </div>
         </div>
     </div>
@@ -54,6 +54,7 @@ import Commend from '@/components/dishes/Commend.vue';
 import SaladCard from '@/components/dishes/SaladCard.vue';
 import CheckBox from '@/components/form/CheckBox.vue';
 import dishJson from '@/data/dish';
+import { calcProgressBar } from '@/helpers';
 export default {
     name: 'DishDetail',
     components: {
@@ -63,19 +64,26 @@ export default {
         CheckBox
     },
     computed: {
-        idParameter(){ return parseInt(this.$route.params.id); }
+        idParameter(){ return parseInt(this.$route.params.id); },
+        order(){ return this.$store.state.order; },
+        progressBar(){ return this.$store.state.progressBar; }
     },
     data: function(){
         return{
-            dishes: dishJson,
+            dishesJson: dishJson,
             value: {}
         }
     },
     methods:{
-        
+        addDish: function() {
+            this.$store.commit('updateDishes', [...this.order[this.order.currentDay.number][this.order.currentFood].dishes, this.value]);
+
+            let { value: progressBarValue, percent } = calcProgressBar(this.progressBar, this.value.calories, '+');
+            this.$store.commit('updateProgressBar', {...this.progressBar, value: progressBarValue, percent: percent});
+        }
     },
     created: function () {
-        this.dishes.forEach(v => {
+        this.dishesJson.forEach(v => {
             if(v.id === this.idParameter)
                 this.value = v; 
 

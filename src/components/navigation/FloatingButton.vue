@@ -1,7 +1,9 @@
 <template>
-  <button class="floating">
-    <FontAwesomeIcon icon="plus" />
-  </button>
+  <router-link to="/dishes">
+    <button class="floating">
+      <FontAwesomeIcon icon="plus" />
+    </button>
+  </router-link>
 </template>
 
 <script>
