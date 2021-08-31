@@ -1,24 +1,29 @@
-# manzana-verde
+# Reto: Desarrollo de mini app de pedidos
+Funcionalidades desarrolladas:
+- Diferenciación de platos por comida y por día
+- Cambio a pantalla completa al clicar una imagen de los platos agregados al pedido
+- Se mostrará una alerta, al hacer clic en el ícono de dirección de entrega
+- Listado de platos disponibles para agregar a su pedido, incluyendo el nombre, calorías, imagen, tags, etiqueta de recomendado
+- Opción de agregar o eliminar una ensalada al pedido
+- Opción para incluir en el pedido algunos extras tales como: picante, papa, camote o arroz
+- Es posible seleccionar platillos favoritos (Marcando el corazón)
 
-## Project setup
+Tecnologías utilizadas:
+- Vue.js
+- Sass
+- Vuex (Manejo de estado de la aplicación)
+
+## Comando para instalar las dependencias del proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Comando para iniciar el proyecto de manera local
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Genera la versión para producción del proyecto
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
