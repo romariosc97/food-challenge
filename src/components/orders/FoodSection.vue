@@ -45,7 +45,6 @@ export default {
         switchCutlery: function(){
             let tmp = !this.cutlery;
             this.$store.commit('updateCutlery', {[this.order.currentDay.number]: tmp});
-            console.log(this.$store.state.cutlery);
         }
     },
     created: function () {
@@ -68,7 +67,7 @@ export default {
     .disposable
         color: #606060
         font-size: 0.875rem
-        margin-bottom: 12px
+        margin-bottom: 15px
         display: flex
         align-items: center
         .input

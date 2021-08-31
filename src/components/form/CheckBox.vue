@@ -29,7 +29,6 @@ export default {
 <style lang="sass" scoped>
     .input
         position: relative
-        margin-bottom: 5px
         label
             margin-left: 15px
         input

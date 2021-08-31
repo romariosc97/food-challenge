@@ -83,7 +83,16 @@ export default {
             this.$router.push('/')
         },
         addExtra: function(extra){
-            this.value['extra'].push(extra);
+            let index;
+            if(this.value['extra'].includes(extra)){
+                index = this.value['extra'].indexOf(extra);
+                if (index > -1) {
+                    this.value['extra'].splice(index, 1);
+                }
+            }else{
+                this.value['extra'].push(extra);
+            }
+            console.log(this.value['extra'])
         }
     },
     created: function () {
@@ -164,6 +173,8 @@ export default {
                 margin-top: 50px
                 color: #606060
                 font-size: 0.875rem
+                .input
+                    margin-bottom: 5px
                 .divider
                     margin-top: 21px
                     margin-bottom: 12px
