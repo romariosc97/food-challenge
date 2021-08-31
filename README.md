@@ -1,6 +1,7 @@
 # Reto: Desarrollo de mini app de pedidos
 Funcionalidades desarrolladas:
 - Diferenciación de platos por comida y por día
+- Conteo general de calorías en la barra progresiva de la vista de pedidos
 - Listado de platos agregados al pedido, que incluye: imagen, nombre, calorias y extras
 - Agregar o quitar cubiertos descartables para su pedido
 - Cambio a pantalla completa al clicar una imagen de los platos agregados al pedido
