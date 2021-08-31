@@ -35,11 +35,11 @@
             </div>
             <SaladCard v-for="salad in value.salads" v-bind:key="salad.name" v-bind:data="salad" />
             <div class="extra">
-                <CheckBox v-bind:label="'Camote'"/>
-                <CheckBox v-bind:label="'Papa'"/>
-                <CheckBox v-bind:label="'Arroz'"/>
+                <CheckBox v-on:click="addExtra('Camote')" v-bind:label="'Camote'"/>
+                <CheckBox v-on:click="addExtra('Papa')" v-bind:label="'Papa'"/>
+                <CheckBox v-on:click="addExtra('Arroz')" v-bind:label="'Arroz'"/>
                 <div class="divider"></div>
-                <CheckBox v-bind:label="'Incluir picante'"/>
+                <CheckBox v-on:click="addExtra('Picante')" v-bind:label="'Incluir picante'"/>
             </div>
             <div class="action">
                 <button v-on:click="addDish" class="add-order">Agregar al pedido</button>
@@ -81,12 +81,17 @@ export default {
             let { value: progressBarValue, percent } = calcProgressBar(this.progressBar, this.value.calories, '+');
             this.$store.commit('updateProgressBar', {...this.progressBar, value: progressBarValue, percent: percent});
             this.$router.push('/')
+        },
+        addExtra: function(extra){
+            this.value['extra'].push(extra);
         }
     },
     created: function () {
         this.dishesJson.forEach(v => {
-            if(v.id === this.idParameter)
-                this.value = v; 
+            if(v.id === this.idParameter){
+                this.value = v;
+                this.value['extra'] = [];
+            }
         });
     }
 }
@@ -153,7 +158,7 @@ export default {
                         display: inline-block
                         font-weight: 600
                         color: #A9A9A9
-                        font-size: 0.75rem
+                        font-size: 0.6875rem
             .extra
                 margin-top: 50px
                 color: #606060

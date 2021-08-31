@@ -19,6 +19,9 @@
             <div class="detail">
                 <div class="title">{{dish.title || dish.name}}</div>
                 <div class="calories">{{dish.calories}} Kcal</div>
+                <div v-show="dish.extra.length>0" class="carbohydrates">
+                    Incluye: <span v-for="(extra, i) in dish.extra" v-bind:key="extra">{{extra + (i===(dish.extra.length-1) ? '.' : ', ')}}</span>
+                </div>
             </div>
             <img v-on:click="deleteDish(index)" class="delete" src="@/assets/images/delete.png" alt="Eliminar">
             <div class="divider" v-if="index<dishes.length-1"></div>
@@ -34,7 +37,7 @@ export default {
     components: { ImgFull },
     data: function(){
         return{
-            imgFullStyle: {"width": '85px', "height": '70px', "border-radius": '10px', "object-fit": 'cover'}
+            imgFullStyle: {"width": '5rem', "height": '4.5rem', "border-radius": '10px', "object-fit": 'cover'}
         }
     },
     props: {
@@ -70,8 +73,6 @@ export default {
 
             this.$store.commit('updateDishes', tmp);
         }
-    },
-    created: function () {
     }
 }
 </script>
@@ -95,7 +96,7 @@ export default {
                 height: 1px
                 background: #E8E8E8
             .detail
-                margin-left: 15px
+                margin-left: 12px
                 font-weight: 600
                 .title
                     color: #35B266
@@ -104,6 +105,13 @@ export default {
                 .calories
                     color: #A9A9A9
                     font-size: 0.75rem
+                    margin-bottom: 5px
+                .carbohydrates
+                    color: #606060
+                    font-size: 0.6875rem
+                    span
+                        font-weight: 400
+                        text-transform: lowercase
             img.delete
                 margin-left: auto
                 margin-right: 10px

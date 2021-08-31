@@ -28,11 +28,7 @@ import FloatingButton from '@/components/navigation/FloatingButton.vue';
 export default {
   components: {
     FloatingButton
-  },
-  data: function () {
-    return {
-    }
-  },
+  }
 }
 </script>
 

@@ -47,7 +47,6 @@ export default {
         },
         dayHasDishes(day){
             let has = false;
-            console.log(this.order);
             if(day in this.order)
                 if(this.order.currentFood in this.order[day])
                     has = this.order[day][this.order.currentFood].dishes.length>0 ? true : false;
@@ -78,12 +77,15 @@ export default {
         .card
             cursor: pointer
             border-radius: 8px
-            padding: 5px 17px
+            padding: 5px 18px
             color: #C9C9C9
             &.active
                 cursor: default
                 color: #606060
-                background: #FFD538  
+                background: #FFD538
+                .number
+                    &.ordered
+                        border-bottom: 3px solid transparent
             .text
                 font-size: 0.875rem
                 font-weight: 400

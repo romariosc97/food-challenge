@@ -33,13 +33,13 @@ export default {
         &.full
             border-radius: 8px
             transition: 0.2s width ease-in-out
-            width: 90%
+            width: 92%
             z-index: 2
             &
                 @extend .position
     .background-full
         @extend .position
         width: 100%
-        height: 900px
+        height: 1000px
         background: #D8D8D8
 </style>

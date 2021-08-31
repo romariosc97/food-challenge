@@ -2,7 +2,7 @@
     <div class="unsupported-device">
         <FontAwesomeIcon icon="laptop-code" />
         <div class="title">No disponible</div>
-        <div class="description">La aplicación se encuentra optimizada para dispositivos móviles</div>
+        <div class="description">La aplicación se encuentra optimizada únicamente para dispositivos móviles</div>
     </div>
 </template>
 

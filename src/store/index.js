@@ -12,6 +12,7 @@ export default createStore({
         },
         food: [],
         like: {},
+        cutlery: {}
     },
     getters:{
 
@@ -34,6 +35,9 @@ export default createStore({
         },
         updateLike(state, payload){
             state.like = {...state.like, ...payload};
+        },
+        updateCutlery(state, payload){
+            state.cutlery = {...state.cutlery, ...payload};
         },
     },
     actions:{

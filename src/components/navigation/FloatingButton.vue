@@ -15,7 +15,7 @@ export default {
 <style lang="sass" scoped>
   .floating
     position: absolute
-    bottom: 10px
+    bottom: 5px
     left: -5px
     background: #35B266
     border-radius: 50%

@@ -5,8 +5,8 @@
         </router-link>
         <div class="title">Detalle</div>
         <div class="like">
-            <img v-show="!like" v-on:click="switchLike" src="@/assets/images/like.png" alt="">
-            <img v-show="like" v-on:click="switchLike" src="@/assets/images/like-fill.png" alt="">
+            <img v-show="!like" v-on:click="switchLike" src="@/assets/images/like.png" alt="Like">
+            <img v-show="like" v-on:click="switchLike" src="@/assets/images/like-fill.png" alt="Liked">
         </div>
     </div>
 </template>
@@ -26,10 +26,6 @@ export default {
             else
                 like = false;
             return like; 
-        }
-    },
-    data: function(){
-        return{
         }
     },
     methods: {

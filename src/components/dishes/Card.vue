@@ -1,7 +1,10 @@
 <template>
     <router-link :to="'/dish/' + data.id" class="wrapper">
         <div class="card">
-            <img class="main" :src="data.img" alt="">
+            <img class="main" :src="data.img" :alt="data.title">
+            <div v-show="like" class="circle-like">
+                <img src="@/assets/images/like-fill.png" alt="Liked">
+            </div>
             <div class="details">
                 <div class="title">{{data.title}}</div>
                 <Commend v-bind:absolute="true" />
@@ -23,6 +26,16 @@ export default {
     },
     props: {
         data: Object
+    },
+    computed: {
+        like(){
+            let like;
+            if(this.data.id in this.$store.state.like)
+                like = this.$store.state.like[this.data.id];
+            else
+                like = false;
+            return like; 
+        }
     }
 }
 </script>
@@ -37,6 +50,17 @@ export default {
         border: 1px solid #E8E8E8
         box-sizing: border-box
         border-radius: 10px
+        position: relative
+        .circle-like
+            border-radius: 50%
+            position: absolute
+            top: 12px
+            right: 12px
+            background: #FFF
+            padding: 2px 7px
+            img
+                width: 13px
+                height: 12px
         img.main
             object-fit: cover
             height: 205px

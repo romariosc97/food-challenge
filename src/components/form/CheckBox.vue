@@ -1,7 +1,7 @@
 <template>
     <div class="input">
         <input type="checkbox" :checked="checked"> 
-        <label>{{label}}</label> 
+        <label v-if="label">{{label}}</label> 
         <span v-on:click="check" class="checkmark"></span>
     </div>
 </template>
