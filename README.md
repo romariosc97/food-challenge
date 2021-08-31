@@ -5,16 +5,23 @@ Funcionalidades desarrolladas:
 - Agregar o quitar cubiertos descartables para su pedido
 - Cambio a pantalla completa al clicar una imagen de los platos agregados al pedido
 - Se mostrará una alerta, al hacer clic en el ícono de dirección de entrega
-- Listado de platos disponibles para agregar a su pedido, incluyendo el nombre, calorías, imagen, tags, etiqueta de recomendado
+- En la barra superior del listado de platos, se muestra el día seleccionado
+- Listado de platos disponibles para agregar a su pedido, incluyendo el nombre, calorías, imagen, tags y etiqueta de recomendado
+- Detalle de cada plato con imagen, nombre, descripción, etiqueta de recomendado, macronutrientes y tags
 - Opción de agregar o eliminar una ensalada al pedido
 - Opción para incluir en el pedido algunos extras tales como: picante, papa, camote o arroz
-- Es posible seleccionar o quitar selección como favoritos a los platos (Marcando el corazón)
+- Desde la barra superior (Detalle de plato) se puede seleccionar o quitar de favoritos (Marcando el corazón)
 
 Tecnologías utilizadas:
 - Vue.js
 - Sass
 - Vuex (Manejo de estado de la aplicación)
 - Jest
+
+Otros complementos utlizados:
+- Se utilizaron íconos proporcionados por Font Awesome
+- Las imágenes adicionales requeridas se extrajeron de Unsplash
+- La data utilizada es obtenida mediante archivos en formato JSON
 
 Adicionalmente, se agregaron tres pruebas unitarias.
 
