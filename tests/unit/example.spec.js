@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import UnderConstruction from './../../components/UnderConstruction.vue'
+import UnderConstruction from '../../src/components/UnderConstruction.vue'
 
 // Función auxiliar que monta y devuelve el texto representado.
 function getRenderedText (Component, propsData) {
