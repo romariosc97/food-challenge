@@ -90,7 +90,6 @@ export default {
         this.dishesJson.forEach(v => {
             if(v.id === this.idParameter){
                 this.value = v;
-                this.value['extra'] = [];
             }
         });
     }
@@ -144,21 +143,23 @@ export default {
                 margin-top: 20px
                 display: flex
                 flex-wrap: wrap
-                justify-content: space-between
+                align-items: center
+                flex-direction: row
+                row-gap: 8px
+                column-gap: 10px
                 .item
                     display: inline-block
-                    margin-bottom: 8px
                     &:last-child
                         margin-right: 0px
                     img
                         margin-right: 4px
                         height: 17px
-                        width: 17px
+                        width: 15px
                     .name
                         display: inline-block
-                        font-weight: 600
+                        font-weight: 400
                         color: #A9A9A9
-                        font-size: 0.6875rem
+                        font-size: 0.75rem
             .extra
                 margin-top: 50px
                 color: #606060

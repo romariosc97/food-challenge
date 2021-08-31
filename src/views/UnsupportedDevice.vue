@@ -9,6 +9,10 @@
 <script>
 export default {
     name: 'UnsupportedDevice',
+    beforeCreate: function() {
+        if(window.innerWidth<=540)
+        this.$router.push('/')
+    }
 }
 </script>
 
