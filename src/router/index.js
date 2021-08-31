@@ -1,19 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
+import Today from '../views/Today.vue';
 import Orders from '../views/Orders.vue';
 import Food from '../views/Food.vue';
 import Coach from '../views/Coach.vue';
 import Dishes from '../views/Dishes.vue';
 import DishDetail from '../views/DishDetail.vue';
+import UnsupportedDevice from '../views/UnsupportedDevice.vue';
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/today',
+    name: 'Today',
+    component: Today
   },
   {
-    path: '/orders',
+    path: '/',
     name: 'Orders',
     component: Orders
   },
@@ -34,8 +35,13 @@ const routes = [
   },
   {
     path: '/coach',
-    name: 'coach',
+    name: 'Coach',
     component: Coach
+  },
+  {
+    path: '/unsupported-device',
+    name: 'Unsupported device',
+    component: UnsupportedDevice
   }
 ]
 

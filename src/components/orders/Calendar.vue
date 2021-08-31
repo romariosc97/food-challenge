@@ -2,7 +2,7 @@
     <div class="calendar">
         <div v-for="day in days" v-bind:key="day.number" v-on:click="changeDay(day)" :class="'card' + (today === day.number ? ' active' : '')">
             <div class="text">{{day.text}}</div>
-            <div class="number">{{day.number}}</div>
+            <div :class="'number' + (dayHasDishes(day.number) ? ' ordered' : '')">{{day.number}}</div>
         </div>
     </div>
 </template>
@@ -44,7 +44,15 @@ export default {
                 });
                 this.$store.commit('createOrderFood', {...foodState});
             }
-        }
+        },
+        dayHasDishes(day){
+            let has = false;
+            console.log(this.order);
+            if(day in this.order)
+                if(this.order.currentFood in this.order[day])
+                    has = this.order[day][this.order.currentFood].dishes.length>0 ? true : false;
+            return has;
+        },
     },
     created: function () {
         this.getNextDays();
@@ -68,10 +76,12 @@ export default {
         justify-content: space-between
         border-bottom: 1px solid #E8E8E8
         .card
+            cursor: pointer
             border-radius: 8px
             padding: 5px 17px
             color: #C9C9C9
             &.active
+                cursor: default
                 color: #606060
                 background: #FFD538  
             .text
@@ -81,4 +91,7 @@ export default {
                 font-size: 1.25rem
                 font-weight: 600
                 text-align: center
+                &.ordered
+                    border-bottom: 3px solid #35B266
+                    border-radius: 1px
 </style>

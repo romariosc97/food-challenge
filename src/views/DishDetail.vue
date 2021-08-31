@@ -1,6 +1,6 @@
 <template>
     <div class="dish-detail">
-        <TopBar v-bind:route="'dishes'"/>
+        <TopBarDetail v-bind:data="value"/>
         <div class="dish">
             <img class="main" :src="value.img" alt="" srcset="">
             <div class="title">{{value.title}}</div>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import TopBar from '@/components/dishes/TopBar.vue';
+import TopBarDetail from '@/components/dishes/TopBarDetail.vue';
 import Commend from '@/components/dishes/Commend.vue';
 import SaladCard from '@/components/dishes/SaladCard.vue';
 import CheckBox from '@/components/form/CheckBox.vue';
@@ -58,7 +58,7 @@ import { calcProgressBar } from '@/helpers';
 export default {
     name: 'DishDetail',
     components: {
-        TopBar,
+        TopBarDetail,
         Commend,
         SaladCard,
         CheckBox
@@ -80,13 +80,13 @@ export default {
 
             let { value: progressBarValue, percent } = calcProgressBar(this.progressBar, this.value.calories, '+');
             this.$store.commit('updateProgressBar', {...this.progressBar, value: progressBarValue, percent: percent});
+            this.$router.push('/')
         }
     },
     created: function () {
         this.dishesJson.forEach(v => {
             if(v.id === this.idParameter)
                 this.value = v; 
-
         });
     }
 }

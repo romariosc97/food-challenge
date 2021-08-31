@@ -1,6 +1,6 @@
 <template>
   <MobileNavbar />
-  <div class="home">
+  <div class="today">
     <UnderConstruction v-bind:route="'Hoy'"/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import MobileNavbar from '@/components/navigation/MobileNavbar.vue';
 import UnderConstruction from '@/components/UnderConstruction.vue';
 export default {
-  name: 'Home',
+  name: 'Today',
   components: {
     MobileNavbar,
     UnderConstruction
@@ -18,6 +18,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-    .home
+    .today
       text-align: center
 </style>

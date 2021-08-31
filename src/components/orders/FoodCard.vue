@@ -15,7 +15,7 @@
     
     <div class="order-card" v-show="dishes.length>0">
         <div class="dish" v-for="(dish, index) in dishes" v-bind:key="dish.title">
-            <img class="main" :src="dish.img" :alt="dish.name">
+            <ImgFull v-bind:imgFullStyle="imgFullStyle" v-bind:data="dish" />
             <div class="detail">
                 <div class="title">{{dish.title || dish.name}}</div>
                 <div class="calories">{{dish.calories}} Kcal</div>
@@ -28,9 +28,15 @@
 
 <script>
 import { calcProgressBar } from '@/helpers';
+import ImgFull from '@/components/others/ImgFull.vue';
 export default {
     name: 'FoodCard',
-    components: { },
+    components: { ImgFull },
+    data: function(){
+        return{
+            imgFullStyle: {"width": '85px', "height": '70px', "border-radius": '10px', "object-fit": 'cover'}
+        }
+    },
     props: {
         data: Object
     },
@@ -88,11 +94,6 @@ export default {
                 margin-right: auto
                 height: 1px
                 background: #E8E8E8
-            img.main
-                width: 85px
-                height: 70px
-                border-radius: 10px
-                object-fit: cover
             .detail
                 margin-left: 15px
                 font-weight: 600
@@ -144,4 +145,9 @@ export default {
                 border-radius: 8px
                 padding: 12px 37px
                 background: #FFD538
+    @media (max-width: 350px)
+        .food-card
+            .action
+                button
+                    padding: 12px 22px
 </style>

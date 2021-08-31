@@ -98,4 +98,9 @@ export default {
                         color: #606060
                         height: 24px
                         width: 33px
+    @media (max-width: 350px)
+        .top-bar
+            .menu
+                .auto
+                    display: none
 </style>

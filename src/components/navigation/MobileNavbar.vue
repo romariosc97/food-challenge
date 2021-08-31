@@ -1,11 +1,11 @@
 <template>
   <div class="mobile-nav">
     <div class="pass-through"></div>
-    <router-link to="/">
+    <router-link to="/today">
       <FontAwesomeIcon icon="calendar-alt" />
       <div class="label">Hoy</div>
     </router-link>
-    <router-link to="/orders">
+    <router-link to="/">
       <FontAwesomeIcon icon="concierge-bell" />
       <div class="label">Mis pedidos</div>
     </router-link>
@@ -74,10 +74,10 @@ export default {
     .pass-through
       width: 100%
       height: 100%
-      background-image: url('../../assets/images/navbar.png')
+      background-image: url('../../assets/images/navbar2.png')
       left: 50%
       transform: translateX(-50%)
-      bottom: 10px
+      bottom: 0px
       position: fixed
       background-size: cover
       background-repeat: no-repeat

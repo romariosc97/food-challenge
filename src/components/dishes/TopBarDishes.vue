@@ -1,15 +1,12 @@
 <template>
     <div class="top-bar">
-        <router-link v-bind:to="'/' + route" class="link">
+        <router-link v-bind:to="'/'" class="link">
             Atrás
         </router-link>
-        <div class="title">{{route === 'orders' ? 'Almuerzo' : 'Detalle'}}</div>
-        <div class="date" v-show="route === 'orders'">
+        <div class="title">Almuerzo</div>
+        <div class="date">
             <div class="day">{{currentDay.text}}</div>
             <div class="number">{{currentDay.number}}</div>
-        </div>
-        <div class="like" v-show="route === 'dishes'">
-            <img src="@/assets/images/like.png" alt="">
         </div>
     </div>
 </template>
@@ -17,9 +14,6 @@
 <script>
 export default {
     name: 'TopBar',
-    props: {
-        route: String
-    },
     computed: {
         currentDay(){ return this.$store.state.order.currentDay; }
     }
@@ -46,10 +40,6 @@ export default {
             .day
                 font-size: 0.875rem
             .number
+                text-align: center
                 font-size: 1.25rem
-        .like
-            height: 19px
-            img
-                width: 21px
-                height: 19px
 </style>

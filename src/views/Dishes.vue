@@ -1,6 +1,6 @@
 <template>
     <div class="dishes">
-        <TopBar v-bind:route="'orders'"/>
+        <TopBarDishes/>
         <div class="list">
             <Card v-for="data in dishes" v-bind:key="data.title" v-bind:data="data" />
         </div>
@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import TopBar from '@/components/dishes/TopBar.vue';
+import TopBarDishes from '@/components/dishes/TopBarDishes.vue';
 import Card from '@/components/dishes/Card.vue';
 import dishJson from '@/data/dish';
 export default {
     name: 'Dishes',
     components: {
-        TopBar,
+        TopBarDishes,
         Card
     },
     data: function(){

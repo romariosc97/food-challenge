@@ -9,7 +9,8 @@
                 <img src="@/assets/images/info.png" alt="Info">
             </div>
         </div>
-        <button v-on:click="addSalad" class="add">Agregar</button>
+        <button v-show="!deleteIcon" v-on:click="addSalad" class="add">Agregar</button>
+        <img v-show="deleteIcon" v-on:click="deleteDish()" class="delete" src="@/assets/images/delete.png" alt="Eliminar">
     </div>
 </template>
 
@@ -27,6 +28,21 @@ export default {
     computed:{
         order(){ return this.$store.state.order; },
         progressBar(){ return this.$store.state.progressBar; },
+        dishes(){
+            let dishes;
+            if(this.order.currentDay.number in this.order){
+                if(this.order.currentFood in this.order[this.order.currentDay.number])
+                    dishes = this.order[this.order.currentDay.number][this.order.currentFood].dishes;
+            }
+            if(!dishes)
+                dishes = [];
+            return dishes;
+        },
+    },
+    data: function(){
+        return{
+            deleteIcon: false
+        }
     },
     methods: {
         addSalad: function() {
@@ -34,6 +50,25 @@ export default {
 
             let { value, percent } = calcProgressBar(this.progressBar, this.data.calories, '+');
             this.$store.commit('updateProgressBar', {...this.progressBar, value: value, percent: percent});
+            this.deleteIcon = true;
+        },
+        deleteDish: function() {
+            let deletedItem,
+                dishesLength = this.dishes.length-1;
+                this.dishes
+            let tmp = this.dishes.filter((v, index) => {
+                let pass = true;
+                if(index===dishesLength){
+                    pass = false;
+                    deletedItem = v;
+                }
+                return pass;
+            });
+            let { value, percent } = calcProgressBar(this.progressBar, deletedItem.calories, '-');
+            this.$store.commit('updateProgressBar', {...this.progressBar, value: value, percent: percent});
+
+            this.$store.commit('updateDishes', tmp);
+            this.deleteIcon = false;
         }
     },
     created: function () {
@@ -80,4 +115,8 @@ export default {
             border-radius: 8px
             padding: 16px 18px
             height: fit-content
+        .delete
+            margin-left: auto
+            width: 25px
+            cursor: pointer
 </style>

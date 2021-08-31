@@ -10,7 +10,8 @@ export default createStore({
             currentDay: {text: "", number: 0},
             currentFood: 2,
         },
-        food: []
+        food: [],
+        like: {},
     },
     getters:{
 
@@ -30,6 +31,9 @@ export default createStore({
         },
         updateFood(state, payload){
             state.food = payload;
+        },
+        updateLike(state, payload){
+            state.like = {...state.like, ...payload};
         },
     },
     actions:{
