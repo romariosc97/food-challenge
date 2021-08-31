@@ -55,9 +55,11 @@ export default {
             border-radius: 50%
             position: absolute
             top: 12px
+            display: flex
+            align-items: center
             right: 12px
             background: #FFF
-            padding: 2px 7px
+            padding: 5px 5px
             img
                 width: 13px
                 height: 12px
@@ -83,7 +85,7 @@ export default {
                 display: inline-block
                 img
                     margin-right: 17px
-                    height: 20px
+                    height: 1.25rem
                     &:last-child
                         margin-right: 0px
 

@@ -24,7 +24,7 @@ export default {
     .top-bar
         box-shadow: 0px 2px 4px rgba(232, 232, 232, 0.5)
         color: #606060
-        padding: 7px 15px
+        padding: 0.5rem 15px
         display: flex
         align-items: center
         font-weight: 600

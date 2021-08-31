@@ -10,7 +10,7 @@
             </div>
         </div>
         <button v-show="!deleteIcon" v-on:click="addSalad" class="add">Agregar</button>
-        <img v-show="deleteIcon" v-on:click="deleteDish()" class="delete" src="@/assets/images/delete.png" alt="Eliminar">
+        <button v-show="deleteIcon" v-on:click="deleteDish" class="delete">Eliminar</button>
     </div>
 </template>
 
@@ -70,23 +70,29 @@ export default {
             this.$store.commit('updateDishes', tmp);
             this.deleteIcon = false;
         }
-    },
-    created: function () {
     }
 }
 </script>
 
 <style lang="sass" scoped>
+    .button
+        margin-left: auto
+        font-weight: 600
+        font-size: 0.875rem
+        color: #606060
+        border-radius: 8px
+        padding: 1rem 1.125rem
+        height: fit-content
     .salads
         margin-top: 18px
         border: 1px solid #E8E8E8
         border-radius: 8px
-        padding: 10px
+        padding: 0.625rem
         display: flex
         align-items: center
         img.main
-            height: 77px
-            width: 88px
+            height: 4.75rem
+            width: 5.5rem
             object-fit: cover
             border-radius: 4px
         .info
@@ -107,16 +113,9 @@ export default {
                     width: 14px
                     height: 14px
         .add
-            margin-left: auto
-            font-weight: 600
-            font-size: 0.875rem
-            color: #606060
+            @extend .button
             background: #FFD538
-            border-radius: 8px
-            padding: 16px 18px
-            height: fit-content
         .delete
-            margin-left: auto
-            width: 25px
-            cursor: pointer
+            @extend .button
+            background: #FFD538
 </style>
