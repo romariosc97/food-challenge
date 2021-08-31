@@ -43,11 +43,11 @@ const routes = [
     name: 'Unsupported device',
     component: UnsupportedDevice
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
